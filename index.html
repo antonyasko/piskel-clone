@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Piskel Clone</title>
+  </head>
+  <body>
+    <div id="landing_page" class="landing_page">
+      <div id="landing_page_info">
+        <div id="landing_page_header">
+          <div id="project_name">SimplePiskelClone</div>
+          <div id="creater">Created by Anton Yasko</div>
+        </div>
+        <div id="landing_page_main">
+          <div id="start_block">
+            <div id="piskel_text">SimplePiskelClone is a free online editor for animated sprites & pixel art</div>
+            <div id="starting_buttons">
+              <button id="start_piskel">Start</button>
+            </div>
+          </div>
+          <div id="piskel_screen"></div>
+        </div>
+        <div id="landing_page_footer">
+          <div class="example_text">Examples</div>
+          <div class="example"></div>
+          <div class="example"></div>
+          <div class="example"></div>
+          <div class="example"></div>
+          <div class="example"></div>
+        </div>
+      </div>
+    </div>
+    <div id="hotkeys_popup">
+      <div id="hotkeys_block">
+        <div id="hotkeys_header">
+          <p id="title_hotkeys">Keyboard shortcuts</p>
+          <button id="close_hotkeys_popup">close</button>
+        </div>
+        <ul id="hotkeys_list">
+          <li>
+            <div class="edit_hotkey_value">B</div>
+            <div class="hotkey_name">Fill bucket</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">C</div>
+            <div class="hotkey_name">Choose color</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">P</div>
+            <div class="hotkey_name">Pencil</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">L</div>
+            <div class="hotkey_name">Stroke</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">E</div>
+            <div class="hotkey_name">Eraser</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">A</div>
+            <div class="hotkey_name">Paint all pixels of the same color</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">G</div>
+            <div class="hotkey_name">Save as .gif</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">Y</div>
+            <div class="hotkey_name">Save as .apng</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">F</div>
+            <div class="hotkey_name">Full screen</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">N</div>
+            <div class="hotkey_name">Add new frame</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">R</div>
+            <div class="hotkey_name">Delete current frame</div>
+          </li>
+          <li>
+            <div class="edit_hotkey_value">D</div>
+            <div class="hotkey_name">Duplicate current frame</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapper">
+      <header class="header">
+        <div class="app_bar">
+          <div class="nav">
+            <button class="nav_button">
+              <div class="nav_icon"></div>
+            </button>
+            <div class="app_bar_title"><p>Codejam - Simple Piskel Clone</p></div>
+          </div>
+          <button class="menu_button">
+            <div class="menu_icon"></div>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="left">
+          <div class="tools_block">
+            <button class="fill_bucket hover_button">
+              <div class="fill_bucket_icon"></div>
+              <p>Fill bucket</p>
+            </button>
+            <div class="choose_color_wrapper hover_button">
+              <button class="choose_color">
+                <div class="choose_color_icon"></div>
+                <p>Choose color</p>
+              </button>
+              <input id="id_choose_color" type="color">
+            </div>
+            <button class="pencil hover_button">
+              <div class="pencil_icon"></div>
+              <p>Pencil</p>
+            </button>
+            <button class="stroke hover_button">
+              <div class="stroke_icon"></div>
+              <p>Stroke</p>
+            </button>
+            <button class="eraser hover_button">
+              <div class="eraser_icon"></div>
+              <p>Eraser</p>
+            </button>
+            <button class="fill_same_pixels hover_button">
+              <div class="fill_same_pixels_icon"></div>
+              <p>Fill same pixels</p>
+            </button>
+          </div>
+          <div class="colors_block">
+            <button class="current_color">
+              <div class="current_color_circle"></div>
+              <p>Current color</p>
+            </button>
+            <button class="prev_color">
+              <div class="prev_color_circle"></div>
+              <p>Prev color</p>
+            </button>
+            <button class="first_color">
+              <div id="id_first_color" class="first_color_circle"></div>
+              <p>Red</p>
+            </button>
+            <button class="second_color">
+              <div class="second_color_circle"></div>
+              <p>Blue</p>
+            </button>
+          </div>
+        </div>
+        <div class="center">
+          <div class="load_image_block">
+            <button class="load_image"><p>Load</p></button>
+            <div class="find_city">
+              <div class="search_icon"></div>
+              <input class="search_area" type="text" value="town,Minsk">
+            </div>
+            <button class="make_gray"><p>B&W</p></button>
+          </div>
+          <canvas id="canvas" class="canvas_block" width="512" height="512"></canvas>
+          <div class="change_draw_size">
+            <button id="first_size" class="sizeButton"><p>1x</p></button>
+            <button id="second_size" class="sizeButton"><p>2x</p></button>
+            <button id="third_size" class="sizeButton"><p>3x</p></button>
+            <button id="fourth_size" class="sizeButton"><p>4x</p></button>
+          </div>
+        </div>
+        <div class="right">
+          <div class="animation_block">
+            <div class="animation_tools">
+              <button id="save_gif" class="hover_button"><p>.gif</p></button>
+              <button id="save_apng" class="hover_button"><p>.apng</p></button>
+              <button id="full_screen" class="hover_button"><p>Full screen</p></button>
+            </div>
+            <canvas id="id_animation_block" width="256" height="256"></canvas>
+            <div class="switch_fps">
+              <div id="fps_value"></div>
+              <input type="range" min="1" max="24" id="fps_line" value="1">
+            </div>
+            <button id="hotkeys"></button>
+          </div>
+          <div class="frames_block">
+            <button id="new_frame" class="hover_button">
+              <p>Add new frame</p>
+            </button>
+            <ul id="frames">
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="text/javascript" src="https://rawgit.com/antimatter15/jsgif/master/LZWEncoder.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/antimatter15/jsgif/master/NeuQuant.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/antimatter15/jsgif/master/GIFEncoder.js"></script>
+  </body>
+</html>

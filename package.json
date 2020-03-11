@@ -1,0 +1,44 @@
+{
+  "name": "webformyself-webpack",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "script.js",
+  "dependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "downloadjs": "^1.4.7",
+    "gifencoder": "^2.0.1",
+    "upng-js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "lint": "eslint *.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "webpack"
+  ],
+  "author": "Anton Yasko",
+  "license": "ISC"
+}

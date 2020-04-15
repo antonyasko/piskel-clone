@@ -14,7 +14,7 @@ const canvasSize = 512;
 const animationSize = 256;
 let pixelSize = 4;
 
-const stateLocalStorage = localStorage.getItem('simplePiskelCloneKey');
+// const stateLocalStorage = localStorage.getItem('simplePiskelCloneKey');
 
 const sizeFirst = document.querySelector('#first_size');
 const sizeSecond = document.querySelector('#second_size');
@@ -115,22 +115,22 @@ const prevColorCircle = document.querySelector('.prev_color_circle');
 prevColorCircle.style.backgroundColor = '#ffffff';
 
 function saveCanvas() {
-  const dataURL = canvas.toDataURL('image/png');
-  const currentCanvas = dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
-  localStorage.setItem('simplePiskelCloneKey', currentCanvas);
+  // const dataURL = canvas.toDataURL('image/png');
+  // const currentCanvas = dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
+  // localStorage.setItem('simplePiskelCloneKey', currentCanvas);
   saveCurrentFrame(arrFrames, stateFrame);
 }
 
-if (stateLocalStorage) {
-  const canvasImage = new Image();
-  canvasImage.onload = () => {
-    ctx.drawImage(canvasImage, 0, 0);
-  };
-  canvasImage.src = `data:image/png;base64,${stateLocalStorage}`;
-  canvasImage.crossOrigin = 'Anonymous';
-} else {
-  saveCanvas();
-}
+// if (stateLocalStorage) {
+//   const canvasImage = new Image();
+//   canvasImage.onload = () => {
+//     ctx.drawImage(canvasImage, 0, 0);
+//   };
+//   canvasImage.src = `data:image/png;base64,${stateLocalStorage}`;
+//   canvasImage.crossOrigin = 'Anonymous';
+// } else {
+//   saveCanvas();
+// }
 
 const firstColor = document.querySelector('.first_color');
 firstColor.addEventListener('click', () => {
